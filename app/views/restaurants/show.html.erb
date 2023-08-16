@@ -1,0 +1,52 @@
+<nav class="navbar navbar-light p-2" style="background-color: #e3f2fd;">
+<%= link_to "Back to home", restaurants_path %>
+<%# <%= link_to "Delete", restaurants_path(@restaurant.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure"} %>
+
+<div class="card col-3 p-3 m-3">
+  <p>
+    <strong>Name:</strong>
+    <%= @restaurant.name %>
+  </p>
+  <p>
+    <strong>Address:</strong>
+    <%= @restaurant.address %>
+  </p>
+
+  <p>
+    <strong>Phone Number:</strong>
+    <%= @restaurant.phone_number %>
+  </p>
+
+  <p>
+    <strong>category:</strong>
+    <%= @restaurant.category %>
+  </p>
+</div>
+
+
+<h1 class="mt-5">Create a review</h1>
+
+<%= simple_form_for [@restaurant, @review] do |f| %>
+
+   <div class="form-inputs">
+    <%= f.input :content %>
+    <%= f.input :rating %>
+  </div>
+
+  <div class="form-actions" >
+    <%= f.button :submit, class: "btn btn-primary"%>
+   </div>
+<% end %>
+
+<% @restaurant.reviews.each do |review| %>
+  <div class="card">
+    <p>
+      <strong>Content</strong>
+      <%= review.content%>
+    </p>
+    <p>
+      <strong>Rating</strong>
+      <%= review.rating%>
+    </p>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<div class="card col-3 p-3" id="<%= dom_id restaurant %>">
+  <p>
+    <strong>Name:</strong>
+    <%= restaurant.name %>
+  </p>
+
+  <p>
+    <%= link_to "Show this restaurant", restaurant %>
+  </p>
+  <%# <%= link_to "👍", upvote_restaurant_path(restaurant.id), data: {turbo_method: :patch}  %>
+
+</div>

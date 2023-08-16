@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light p-2" style="background-color: #e3f2fd;">
+  <%= link_to "New restaurant", new_restaurant_path %>
+</nav>
+<h1 class="text-center">Restaurants</h1>
+<div class="d-flex flex-wrap gap-3 w-100 justify-content-center" id="restaurants">
+    <% @restaurants.each do |restaurant| %>
+      <%= render restaurant %>
+    <% end %>
+  </div>
+</div>
